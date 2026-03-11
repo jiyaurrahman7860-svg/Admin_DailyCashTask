@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1745FF;
+  --background: #FFFFFF;
+  --foreground: #000000;
+  --card: #F6F8FF;
+  --error: #FF3B30;
+  --success: #22C55E;
+}
+
+/* Dark mode CSS variables */
+.dark {
+  --background: #0F172A;
+  --foreground: #FFFFFF;
+  --card: #1E293B;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-white text-black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  .dark body {
+    @apply bg-[#0F172A] text-white;
+  }
+}
+
+@layer utilities {
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  .text-primary {
+    color: var(--primary);
+  }
+  .border-primary {
+    border-color: var(--primary);
+  }
+  .hover\:bg-primary-dark:hover {
+    background-color: #1236CC;
+  }
+}
+
+/* Dark mode specific component styles */
+.dark .admin-card {
+  @apply bg-[#1E293B] border-gray-700;
+}
+
+.dark .admin-sidebar {
+  @apply bg-[#1E293B] border-gray-700;
+}
+
+.dark .admin-table-header {
+  @apply bg-[#1E293B] text-white;
+}
+
+.dark .admin-table-row {
+  @apply border-gray-700 hover:bg-[#2D3B4F];
+}
+
+.dark .admin-input {
+  @apply bg-[#1E293B] border-gray-700 text-white placeholder-gray-400;
+}
+
+.dark .admin-text {
+  @apply text-gray-300;
+}
+
+.dark .admin-text-muted {
+  @apply text-gray-400;
+}
